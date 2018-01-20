@@ -19,3 +19,7 @@ Our app asks for the data specific to a prospective employee that a company want
 
 ## Dependencies
 Our project uses a machine learning script written in Python. For our machine learning we used the Scikit-learn library, and for data proccessing, we used the Pandas library. Our app is written using Android's development studio and Amazon's Web Service.
+
+## Comparisons of Classification Schemes Used
+80/20 Train/Test Split
+1. Support Vector Machine
