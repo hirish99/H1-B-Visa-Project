@@ -1,6 +1,6 @@
 def returnClean():
     import pandas as pd
-    h1b_data = pd.read_csv("../h1b_kaggle.csv")
+    h1b_data = pd.read_csv("../h1b_concat.csv")
     #TEMP: SHORTENED DATA:
     h1b_data = h1b_data.head(700)
     h1b_data.replace({'N':0, 'Y':1}, axis=1, inplace=True)
