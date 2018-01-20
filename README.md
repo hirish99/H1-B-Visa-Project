@@ -18,4 +18,4 @@ H-1B visas cost employers about $5,000 (including government fees) per employee.
 Our app asks for the data specific to a prospective employee that a company wants to hire. Using the training data of past employers and their LCA applications given by the Department of Labor on their website (https://www.foreignlaborcert.doleta.gov/performancedata.cfm), we optimize a machine learning algorithm that will determine whether or not a particular employee's LCA application will be approved. 
 
 ## Dependencies
-Our project uses a machine learning script written in Python. For our machine learning we used the Scikit-learn library, and for data proccessing, we used the Pandas library. Our app is written using Android's development studio and Amazons' Web Service.
+Our project uses a machine learning script written in Python. For our machine learning we used the Scikit-learn library, and for data proccessing, we used the Pandas library. Our app is written using Android's development studio and Amazon's Web Service.
