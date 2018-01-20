@@ -41,5 +41,8 @@ def returnClean():
     h1b_data.replace(EMPL_vals_dict, inplace=True)
     h1b_data.replace(WORK_vals_dict, inplace=True)
     h1b_data.replace(JOB_vals_dict, inplace=True)
+    
+    #Normalize Data
+    df_norm = (df - df.mean()) / (df.max() - df.min())
 
     return h1b_data;
