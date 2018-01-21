@@ -2,15 +2,17 @@ import pandas as pd
 import numpy as np
 from clean import returnClean
 
+n = 500
+p = 0.75
 
-h1b_data = returnClean()
+h1b_data = returnClean(n)
 
 #Train/Test Split:
-train = h1b_data.sample(frac=0.25, random_state=200)
+train = h1b_data.sample(frac=p, random_state=200)
 test = h1b_data.drop(train.index)
 test.to_csv('test')
 
-#Dropping JObTitle
+#Dropping JobTitle
 X = train.drop(['CASE_STATUS','JOB_TITLE'], axis=1)
 Y = train['CASE_STATUS']
 
