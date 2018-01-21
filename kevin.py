@@ -2,14 +2,12 @@ import pandas as pd
 import numpy as np
 from clean import returnClean
 
-def kevin(n, p, SOC_NAME, FULL_TIME_POSITION, PREVAILING_WAGE, WORKSITE, lon, lat):
+def kevin(n, SOC_NAME, FULL_TIME_POSITION, PREVAILING_WAGE, WORKSITE, lon, lat):
 
     h1b_data = returnClean(n)
 
     #Train/Test Split:
-    train = h1b_data.sample(frac=p, random_state=200)
-    test = h1b_data.drop(train.index)
-    test.to_csv('test')
+    train = h1b_data
 
     #Dropping JobTitle
     X = train.drop(['CASE_STATUS','JOB_TITLE'], axis=1)
