@@ -1,10 +1,17 @@
-def returnClean(n):
+def returnClean(n, m):
     import pandas as pd
     h1b_data = pd.read_csv("./h1b_kaggle.csv")
+
+    df = h1b_data
+    df = df.loc[df['CASE_STATUS'] == 'DENIED']
+    df = df.tail(m)
+    
     #TEMP: SHORTENED DATA:
     h1b_data = h1b_data.head(n)
+    h1b_data = pd.concat([h1b_data, df])
     h1b_data.replace({'N':0, 'Y':1}, axis=1, inplace=True)
     h1b_data.drop(['Unnamed: 0','YEAR','EMPLOYER_NAME'], axis=1, inplace=True)
+
 
     #Renaming SOC_NAME
     SOC_vals = list(h1b_data.SOC_NAME.unique())

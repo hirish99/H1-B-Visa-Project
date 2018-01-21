@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 from clean import returnClean
 
-n = 500
+n = 1000
+m = 1000
 p = 0.75
 
-h1b_data = returnClean(n)
+h1b_data = returnClean(n, m)
 
 #Train/Test Split:
 train = h1b_data.sample(frac=p, random_state=200)
@@ -25,6 +26,8 @@ clf.fit(X, Y)
 
 result = test
 result['OUTPUT'] = clf.predict(test.drop(['CASE_STATUS','JOB_TITLE'], axis=1))
-result.to_csv('OUTPUT.CSV')
+
 result['DIFFERENCE'] = result['OUTPUT'] - result['CASE_STATUS']
-print('KNeighbors Percentage Correct: ', result['CASE_STATUS'].sum()/68.87)
+print('KNeighbors Percentage Incorrect: ', result['DIFFERENCE'].sum()/(100*len(result.columns)))
+result.to_csv('OUTPUT.CSV')
+
