@@ -23,3 +23,6 @@ Our project uses a machine learning script written in Python. For our machine le
 ## Comparisons of Classification Schemes Used
 80/20 Train/Test Split
 1. Support Vector Machine
+  91.3% Accuracy when accounting for inbalances in data (50/50 split)
+2. KNNeighbors
+  97.2% Accuracy when accounting for inbalances in data (50/50 split)
